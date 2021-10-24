@@ -31,7 +31,6 @@
         android:layout_marginBottom="237dp"
         android:autoSizeTextType="uniform"
         android:background="@color/white"
-        android:onClick="onClick"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:text="ÎNCEPEȚI SĂ UTILIZAȚI TEXTRA"
