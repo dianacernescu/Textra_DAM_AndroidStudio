@@ -61,8 +61,11 @@ public class Login extends AppCompatActivity {
 
         }
     }
+    private boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
     private boolean loginValid()
-        {   if(etEmail.getText().toString().isEmpty())
+        {   if(etEmail.getText().toString().isEmpty() || !(isEmailValid(etEmail.getText().toString())))
             {
                 Toast.makeText(Login.this,"completati email-ul",Toast.LENGTH_SHORT).show();
                 return false;}

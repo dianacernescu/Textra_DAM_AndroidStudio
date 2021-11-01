@@ -52,7 +52,9 @@ public class Register extends AppCompatActivity {
         }}
         });
     }
-
+    private boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
    private boolean DateValide()
     {
         if(etNume.getText().toString().isEmpty())
@@ -70,7 +72,7 @@ public class Register extends AppCompatActivity {
         if(etTelefon.getText().toString().length()!=10)
         {Toast.makeText(Register.this,"Numarul trebuie sa aiba 10 cifre",Toast.LENGTH_SHORT).show();
         return false;}
-        if(etEmail.getText().toString().isEmpty())
+        if(etEmail.getText().toString().isEmpty()||!(isEmailValid(etEmail.getText().toString())))
         {
             Toast.makeText(Register.this,"completati email-ul",Toast.LENGTH_SHORT).show();
             return false;}

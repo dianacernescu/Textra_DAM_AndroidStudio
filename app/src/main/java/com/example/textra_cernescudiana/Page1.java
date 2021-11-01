@@ -22,24 +22,7 @@ public class Page1 extends AppCompatActivity {
        contactAdapter=new ContactAdapter(getContacte());
         listView = findViewById(R.id.listContacte);
         listView.setAdapter(contactAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Random r= new Random(3);
-                int rnd_int=r.nextInt();
-                if(rnd_int%2 ==0)
-                    contactAdapter.update_list(getContacte());
-                else
-                    contactAdapter.update_list(getContacte2());
-            }
-        });
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Page1.this,contactAdapter.getItem(position).toString(),Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
+
 
     }
 
@@ -55,16 +38,9 @@ public class Page1 extends AppCompatActivity {
         list.add(new Contact("Andrei","0769857485"));
         list.add(new Contact("Sabin","0736251436"));
         list.add(new Contact("Teodor","0765986574"));
+        list.add(new Contact("Diana","0732531636"));
+        list.add(new Contact("Mihai","0712345698"));
 
         return list;}
-    private List<Contact> getContacte2()
-    {
-        List<Contact> list=new ArrayList<>();
-        list.add(new Contact("Gheorghe","0724186425"));
-        list.add(new Contact("Ionel","0723268745"));
-        list.add(new Contact("Andrei","0769857485"));
-        list.add(new Contact("Sabin","0736251436"));
-        list.add(new Contact("Teodor","0765986574"));
 
-        return list;}
 }
